@@ -34,8 +34,8 @@ _imgwork/       → script de procesamiento de imágenes (no se publica)
   correr `_imgwork/process.js` con nuevas fotos.
 
 ## ⚠️ Pendientes / placeholders (buscar `TODO` en el código)
-- **Enlace de Booking:** hoy apunta a una búsqueda de Tolú. Reemplazar por el enlace real
-  del alojamiento en `index.html` (CTA y footer) y en cualquier tarjeta si se agrega.
+- **Booking:** ✅ ya apunta a la ficha real (Laguna Beach Ecohotel, Tolú:
+  `booking.com/hotel/co/laguna-beach-ecohotel.es.html`) en el CTA y el footer.
 - **Google Maps:** el iframe usa una búsqueda aproximada. Reemplazar por el mapa con el
   **pin exacto** (Google Maps → Compartir → Insertar un mapa).
 - **Imagen para redes (og:image):** al publicar, cambiar `img/hotel.webp` por la URL
