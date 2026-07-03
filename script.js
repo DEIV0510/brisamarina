@@ -110,25 +110,17 @@ const GALERIA = [
   { src:'img/vista.webp',       alt:'Playa de Laguna Beach con palmera y camastros junto al mar' },
   { src:'img/nocturno.webp',    alt:'Piscinas iluminadas con luces de colores durante un show nocturno' },
   { src:'img/balcon2.webp',     alt:'Terraza con mesa frente al mar al anochecer' },
-  { src:'img/panoramica2.webp', alt:'Piscina curva rodeada de palmeras y camastros' },
-  { src:'img/interior.webp',    alt:'Zona de piscinas con el bar de estructura rústica de palma' },
-  { src:'img/nocturno2.webp',   alt:'Ambiente nocturno del complejo con palmeras iluminadas' },
-  { src:'img/vista2.webp',      alt:'Mar turquesa en calma visto desde un balcón de madera' },
 ];
 
 /* =========================================================
    4) FAQ
    ========================================================= */
 const FAQ = [
-  { q:'¿Dónde están ubicados?', a:'Estamos en Laguna Beach, kilómetro 4 vía El Francés, Tolú, Sucre, frente al mar.' },
-  { q:'¿Qué tipos de hospedaje tienen?', a:'Contamos con 2 suites con capacidad hasta para 5 personas cada una y un apartamento moderno de 2 habitaciones, sala, 3 camas tipo tarima y cocina.' },
-  { q:'¿Puedo reservar por WhatsApp?', a:'Sí, puedes consultar disponibilidad y reservar directamente por WhatsApp al 314 603 4150.' },
-  { q:'¿También están en Airbnb y Booking?', a:'Sí, los hospedajes también están disponibles en plataformas como Airbnb y Booking.' },
-  { q:'¿El lugar está frente al mar?', a:'Sí, estamos ubicados frente al mar, en la playa.' },
-  { q:'¿Hay piscina y jacuzzi?', a:'Sí, el lugar cuenta con 3 piscinas y 8 jacuzzis.' },
-  { q:'¿Hay restaurante y bar?', a:'Sí, el lugar cuenta con bar y restaurante.' },
+  { q:'¿Dónde están ubicados?', a:'En Laguna Beach, kilómetro 4 vía El Francés, Tolú, Sucre, frente al mar.' },
+  { q:'¿Qué tipos de hospedaje tienen?', a:'2 suites con capacidad hasta para 5 personas cada una y un apartamento moderno de 2 habitaciones, sala, 3 camas tipo tarima y cocina.' },
+  { q:'¿Cómo reservo?', a:'Consulta disponibilidad y reserva directamente por WhatsApp al 314 603 4150. También estamos en Airbnb y Booking.' },
+  { q:'¿Qué incluye el lugar?', a:'Playa frente al mar, 3 piscinas, 8 jacuzzis, bar y restaurante, en un ambiente familiar ideal para parejas, familias y grupos.' },
   { q:'¿Los shows de fin de semana tienen costo adicional?', a:'Algunos shows o actividades de fin de semana pueden tener costo adicional. Recomendamos consultar al momento de reservar.' },
-  { q:'¿Es ideal para familias?', a:'Sí, es ideal para familias, parejas y grupos de amigos que buscan descansar frente al mar.' },
 ];
 
 /* =========================================================
@@ -170,10 +162,9 @@ function renderPerks(){
   const grid = document.getElementById('perksGrid');
   if(!grid) return;
   grid.innerHTML = BENEFICIOS.map((b, idx) => `
-    <div class="perk reveal" style="transition-delay:${(idx%4)*80}ms">
+    <div class="perk reveal" style="transition-delay:${(idx%6)*50}ms">
       <div class="perk__ico"><svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[b.i]||''}</svg></div>
-      <h3>${b.t}</h3>
-      <p>${b.d}</p>
+      <span>${b.t}</span>
     </div>`).join('');
 }
 
@@ -310,7 +301,7 @@ function initLightbox(){
 function initLoader(){
   const loader = document.getElementById('loader');
   if(!loader) return;
-  const hide = () => setTimeout(() => loader.classList.add('is-done'), 1400);
+  const hide = () => setTimeout(() => loader.classList.add('is-done'), 850);
   if(document.readyState === 'complete') hide();
   else window.addEventListener('load', hide);
 }
