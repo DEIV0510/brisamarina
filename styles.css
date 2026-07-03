@@ -364,6 +364,33 @@ body.menu-open .mobile-menu{ opacity:1; visibility:visible; transform:scale(1) }
 .stays__note{ text-align:center; margin-top:2.6rem; color:var(--muted); font-style:italic; font-family:var(--serif); font-size:1.15rem }
 
 /* =========================================================
+   VIDEO / RECORRIDO
+   ========================================================= */
+.videosec__grid{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,5vw,4.5rem); align-items:center }
+.videosec__text{ max-width:460px }
+.videosec__text .h2{ margin-top:.6rem }
+.videosec__text .btn{ margin-top:1.7rem }
+.videosec__frame{
+  position:relative; width:min(330px,78vw); aspect-ratio:9/16;
+  border-radius:26px; overflow:hidden; background:var(--navy);
+  border:7px solid #fff; box-shadow:var(--shadow-lg); margin:0 auto;
+}
+.videosec__video{ width:100%; height:100%; object-fit:cover; display:block }
+.videosec__play{
+  position:absolute; inset:0; margin:auto; width:74px; height:74px; border-radius:50%;
+  border:0; cursor:pointer; background:rgba(255,255,255,.92); color:var(--navy);
+  display:grid; place-items:center; box-shadow:var(--shadow-md);
+  transition:transform .3s var(--ease), background .3s, opacity .3s, visibility .3s;
+}
+.videosec__play svg{ margin-left:4px }
+.videosec__play::after{
+  content:""; position:absolute; inset:0; border-radius:50%;
+  border:2px solid rgba(255,255,255,.7); animation:pulse 2.4s ease-out infinite;
+}
+.videosec__play:hover{ transform:scale(1.08); background:#fff }
+.videosec__play.is-hidden{ opacity:0; visibility:hidden }
+
+/* =========================================================
    BENEFICIOS
    ========================================================= */
 .perks__grid{ display:grid; grid-template-columns:repeat(6,1fr); gap:.8rem }
@@ -478,7 +505,7 @@ body.menu-open .mobile-menu{ opacity:1; visibility:visible; transform:scale(1) }
 .location__list strong{ color:var(--navy); font-weight:500 }
 .location__map{
   border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow-md);
-  border:6px solid #fff; aspect-ratio:16/12;
+  border:6px solid #fff; aspect-ratio:16/12; background:var(--sand-deep);
 }
 .location__map iframe{ width:100%; height:100%; border:0; filter:saturate(.9) }
 .location__text .btn--lg{ margin-top:.4rem }
@@ -584,22 +611,24 @@ body.menu-open .mobile-menu{ opacity:1; visibility:visible; transform:scale(1) }
   .gallery__grid{ grid-template-columns:repeat(3,1fr) }
 }
 @media (max-width:840px){
-  .present__grid{ grid-template-columns:1fr }
-  .present__media{ order:-1; padding:1rem 1rem 2.5rem 0; max-width:520px }
   .stays__grid{ grid-template-columns:1fr 1fr }
   .location__grid{ grid-template-columns:1fr }
-  .mosaic__grid{ grid-auto-rows:180px }
+  .videosec__grid{ grid-template-columns:1fr; text-align:center; gap:2rem }
+  .videosec__text{ max-width:none; margin-inline:auto }
+  .videosec__text .eyebrow{ justify-content:center }
 }
 @media (max-width:640px){
+  .section{ padding-top:2.6rem; padding-bottom:2.6rem }
+  .section__head{ margin-bottom:1.7rem }
   .stays__grid{ grid-template-columns:1fr; max-width:420px; margin-inline:auto }
+  .stays__note{ margin-top:1.8rem; font-size:1.05rem }
   .perks__grid{ grid-template-columns:repeat(3,1fr) }
   .gallery__grid{ grid-template-columns:repeat(2,1fr) }
-  .mosaic__grid{ grid-template-columns:1fr 1fr; grid-auto-rows:150px }
-  .mosaic__item--wide{ grid-column:span 2 }
   .footer__grid{ grid-template-columns:1fr 1fr }
   .hero__badges li{ font-size:.74rem; padding:.4rem .8rem }
-  .present__mini-stats{ gap:1.4rem }
-  .present__mini-stats .num{ font-size:2.2rem }
+  .hero__content{ padding-bottom:2.8rem }
+  .location__grid{ gap:1.4rem }
+  .location__map{ aspect-ratio:4/3.1 }
   .lightbox__nav{ width:42px; height:42px; font-size:1.6rem }
   .lightbox__nav--prev{ left:.5rem }
   .lightbox__nav--next{ right:.5rem }

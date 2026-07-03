@@ -16,8 +16,9 @@ No requiere build ni dependencias: es HTML + CSS + JS puro. También puedes abri
 index.html      → estructura + SEO + datos estructurados (JSON-LD)
 styles.css      → sistema de diseño (navy + dorado + arena) y responsive
 script.js       → contenido editable (hospedajes/beneficios/galería/FAQ) + interacciones
-img/            → fotos optimizadas a .webp
-video/          → hero.mp4 (fondo del hero) y otros
+img/            → fotos optimizadas a .webp (atardecer.webp = fondo del hero)
+video/          → recorrido.mp4 (video vertical 9:16 de la sección "Así se vive Brisa Marina");
+                  hero.mp4 queda como alternativa por si se quiere fondo de hero en video
 favicon.svg
 serve.js        → servidor estático local (puerto 5234)
 _imgwork/       → script de procesamiento de imágenes (no se publica)

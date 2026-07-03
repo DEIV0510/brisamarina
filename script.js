@@ -295,6 +295,17 @@ function initLightbox(){
   });
 }
 
+function initVideo(){
+  const v = document.getElementById('tourVideo');
+  const btn = document.getElementById('tourPlay');
+  if(!v || !btn) return;
+  const play = () => { v.play().catch(()=>{}); btn.classList.add('is-hidden'); };
+  btn.addEventListener('click', play);
+  v.addEventListener('play', () => btn.classList.add('is-hidden'));
+  v.addEventListener('pause', () => { if(!v.ended) btn.classList.remove('is-hidden'); });
+  v.addEventListener('ended', () => btn.classList.remove('is-hidden'));
+}
+
 /* =========================================================
    LOADER + INIT
    ========================================================= */
@@ -318,5 +329,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaq();
   initParallax();
   initLightbox();
+  initVideo();
   initLoader();
 });
