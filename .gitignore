@@ -1,0 +1,10 @@
+# Artefactos de trabajo (no se publican)
+_imgwork/contact-sheet.jpg
+
+# Sistema / editores
+.DS_Store
+Thumbs.db
+desktop.ini
+node_modules/
+*.log
+.vscode/
